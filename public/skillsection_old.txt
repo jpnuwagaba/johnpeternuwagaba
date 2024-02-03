@@ -1,0 +1,102 @@
+<div className="pt-8 lg:pt-16">
+          <div className="container-80 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <h1 className="text-3xl text-cornflowerBlue font-bold">Skills</h1>
+            {/* category navigation bar */}
+            <div className="flex flex-row flex-wrap items-center gap-4">
+              <div
+                onClick={() => handleTabChange("Web Development")}
+                className={`cursor-pointer py-2 md:py-6 px-3 uppercase text-gray-500 text-xs font-bold border-b-2 border-white ${
+                  activeTab === "Web Development"
+                    ? "border-b-cornflowerBlue border-b-2 bg-gray-100 md:bg-transparent"
+                    : ""
+                }`}
+              >
+                Web Development
+              </div>
+              <div
+                onClick={() => handleTabChange("Microsoft 365")}
+                className={`cursor-pointer py-2 md:py-6 px-3 uppercase text-gray-500 text-xs font-bold border-b-2 border-white ${
+                  activeTab === "Microsoft 365"
+                    ? "border-b-cornflowerBlue border-b-2 bg-gray-100 md:bg-transparent"
+                    : ""
+                }`}
+              >
+                Microsoft 365
+              </div>
+              <div
+                onClick={() =>
+                  handleTabChange("Geographic Information Systems")
+                }
+                className={`cursor-pointer py-2 md:py-6 px-3 uppercase text-gray-500 text-xs font-bold border-b-2 border-white ${
+                  activeTab === "Geographic Information Systems"
+                    ? "border-b-cornflowerBlue border-b-2 bg-gray-100 md:bg-transparent"
+                    : ""
+                }`}
+              >
+                GIS
+              </div>
+              <div
+                onClick={() => handleTabChange("Design")}
+                className={`cursor-pointer py-2 md:py-6 px-3 uppercase text-gray-500 text-xs font-bold border-b-2 border-white ${
+                  activeTab === "Design"
+                    ? "border-b-cornflowerBlue border-b-2 bg-gray-100 md:bg-transparent"
+                    : ""
+                }`}
+              >
+                Design
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div className=" bg-transition-1" />
+          <div className="container-80 py-8 lg:py-16">
+            <Image
+              className="mb-4 lg:mb-8"
+              src={
+                skillCategory.find((skill) => skill.name === activeTab)
+                  ?.imageUrl
+              }
+              alt="category"
+              width={40}
+              height={40}
+              priority
+            />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+              <div>
+                <div className="flex flex-col gap-3 items-start">
+                  <h1 className="text-xl text-cornflowerBlue mb-3 font-bold">
+                    {skillCategory.map((skill) =>
+                      skill.name === activeTab ? skill.name : null
+                    )}
+                  </h1>
+                </div>
+                <div className="text-gray-600 flex flex-col gap-3 items-start">
+                  <PortableText
+                    value={
+                      skillCategory.find((skill) => skill.name === activeTab)
+                        ?.description
+                    }
+                  />
+                </div>
+              </div>
+              <div>
+                <h1 className="text-gray-600 uppercase mb-3 font-bold text-xs">
+                  stack
+                </h1>
+                <div className="flex flex-wrap gap-4 items-end justify-start lg:justify-start">
+                  {skillCategory.map((skill) =>
+                    skill.name === activeTab
+                      ? skill.skills.map((skill) => (
+                          <SkillBadge
+                            skill={skill.name}
+                            image={skill.imageUrl}
+                          />
+                        ))
+                      : null
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
