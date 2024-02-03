@@ -47,8 +47,10 @@ const SkillTab = () => {
                 stack
               </h1>
               <div className="flex flex-wrap gap-4 items-end justify-start lg:justify-start">
-                {SkillBadgeData.map((skill) => (
-                  <SkillBadge skill={skill.skill} image={skill.src} />
+                {SkillBadgeData.map((skill, i) => (
+                  <div key={i}>
+                    <SkillBadge skill={skill.skill} image={skill.src} />
+                  </div>
                 ))}
               </div>
             </div>

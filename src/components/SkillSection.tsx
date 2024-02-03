@@ -155,13 +155,15 @@ const SkillSection = () => {
                   stack
                 </h1>
                 <div className="flex flex-wrap gap-4 items-end justify-start lg:justify-start">
-                  {skillCategory.map((skill) =>
+                  {skillCategory.map((skill, index) =>
                     skill.name === activeTab
                       ? skill.skills.map((skill) => (
-                          <SkillBadge
-                            skill={skill.name}
-                            image={skill.imageUrl}
-                          />
+                          <div key={index}>
+                            <SkillBadge
+                              skill={skill.name}
+                              image={skill.imageUrl}
+                            />
+                          </div>
                         ))
                       : null
                   )}

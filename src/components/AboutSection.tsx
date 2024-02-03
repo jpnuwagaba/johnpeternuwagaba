@@ -7,8 +7,8 @@ import client from "@/sanity/sanity.client";
 import { PortableText } from "@portabletext/react";
 export type AboutSectionType = {
   name: string;
-  aboutMe: string;
-  summary: string;
+  aboutMe: any;
+  summary: any;
   imageUrl: string;
 };
 

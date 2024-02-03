@@ -96,7 +96,7 @@ const Landing = () => {
                 <HiArrowNarrowRight className="ml-2 h-3 w-3" />
               </Button>
               <Button onClick={handleShowWidget}>
-                Let's Create
+                Let{"'"}s Create
                 <HiArrowNarrowRight className="ml-2 h-3 w-3" />
               </Button>
             </div>
