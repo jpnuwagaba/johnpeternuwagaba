@@ -77,10 +77,10 @@ const Landing = () => {
               <div className="font-bold text-darkSlateGray text-4xl">
                 John Peter Nuwagaba
               </div>
-              <div className="text-gray-100 capitalize">
+              <div className="text-gray-600 text-sm font-bold capitalize">
                 front-end developer / graphics designer / land surveyor
               </div>
-              <div className="mb-5">
+              <div className="">
                 <PortableText value={aboutSection[0]?.summary} />
               </div>
             </div>
@@ -95,8 +95,18 @@ const Landing = () => {
                 </Link>
                 <HiArrowNarrowRight className="ml-2 h-3 w-3" />
               </Button>
-              <Button onClick={handleShowWidget}>
+              {/* <Button onClick={handleShowWidget}>
                 Let{"'"}s Create
+                <HiArrowNarrowRight className="ml-2 h-3 w-3" />
+              </Button> */}
+              <Button onClick={handleShowWidget}>
+              <Link
+                  href="https://www.linkedin.com/in/john-peter-nuwagaba/"
+                  target="_blank"
+                  className="flex flex-row items-center"
+                >
+                  LinkedIn
+                </Link>
                 <HiArrowNarrowRight className="ml-2 h-3 w-3" />
               </Button>
             </div>
@@ -108,7 +118,7 @@ const Landing = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            className="bg-gray-400 border-2 lg:border-none rounded-full lg:rounded-none aspect-square w-[150px] md:w-[200px] lg:w-[450px]"
+            className="bg-gray-400 border-2 lg:border-none rounded-full lg:rounded-none aspect-square w-[150px] md:w-[200px] lg:w-[550px]"
           ></div>
         </div>
       </div>
